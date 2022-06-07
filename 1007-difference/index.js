@@ -1,10 +1,16 @@
-const input = ["5","6","7","8"]
+//var input = '5\n6\n7\n8'
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
 
-const A = input[0]
-const B = input[1]
-const C = input[2]
-const D = input[3]
+const formatAnswer = (unformatedAnswer) => {
+  return `DIFERENCA = ${unformatedAnswer}`
+}
 
-const DIFERENCA = ((A * B) - (C * D))
+const averageGrade = (lines) => {
+  const [A, B, C, D] = lines.map(Number)
+  const unformatedAnswer = ((A * B) - (C * D))
+  answer = formatAnswer(unformatedAnswer)
+  return answer
+}
 
-console.log('DIFERENCA = ' + DIFERENCA)
+console.log(averageGrade(lines))

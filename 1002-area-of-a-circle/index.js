@@ -1,7 +1,17 @@
-const input = ["2.00","100.64","150.00"]
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
 
-const circuference = 3.14159
+const PI = 3.14159;
 
-const area = (Number(circuference) * (Number(input[0]) * Number(input[0]))).toFixed(4)
+const formatAnswer = (circleArea) => {
+  return `A=${circleArea.toFixed(4)}`;
+};
 
-console.log('A=' + area)
+const calcCirclesAreas = (lines) => {
+  const radius = Number(lines[0]);
+  const circleArea = radius * radius * PI;
+  answer = formatAnswer(circleArea);
+  return answer;
+};
+
+console.log(calcCirclesAreas(lines));

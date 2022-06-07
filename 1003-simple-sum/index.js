@@ -1,5 +1,16 @@
-const input = ["30","10"]
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
 
-const soma = Number(input[0]) + Number(input[1])
+const formatAnswer = (sum) => {
+  return `SOMA = ${sum}`
+}
 
-console.log('SOMA = ' + soma)
+const simpleSum = (lines) => {
+  const numberOne = Number(lines[0])
+  const numberTwo = Number(lines[1])
+  const sum = numberOne + numberTwo
+  answer = formatAnswer(sum)
+  return answer
+}
+
+console.log(simpleSum(lines))

@@ -1,5 +1,26 @@
-const input = ["10","9"]
+var samples = [{
+  input: ["10","9"],
+  output: 'X = 19'
+},
+{
+  input: ["10","9"],
+  output: 'X = 19'
+}
+]
+  
 
-var result = Number(lines[0]) + Number(lines[1]);
 
-console.log('X = ' + result);
+const result = (samples) => {
+  return samples.map((sample) => {
+    console.log(sample.input)
+  })
+}
+
+result(samples)
+
+const check = (result, output) => {
+ const answer = result === output ? 'Correct' : 'Wrong'
+ return console.log(answer)
+}
+
+check(result, samples.output)

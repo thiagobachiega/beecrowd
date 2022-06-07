@@ -1,3 +1,11 @@
-var hello = 'Hello World!'
+var sample = {
+  input: 'Hello World!',
+  output: 'Hello World!'
+}
 
-console.log(hello)
+const check = (input, output) => {
+ const aswer = input === output ? 'Correct' : 'Wrong'
+ return console.log(aswer)
+}
+
+check(sample.input, sample.output)
