@@ -1,5 +1,15 @@
-const input = ["JOAO","500.00","1230.00"]
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
 
-const TOTAL = ((Number(input[2]) * 0.15) + Number(input[1])).toFixed(2)
+const formatAnswer = (unformatedAnswer) => {
+  return `TOTAL = R$ ${unformatedAnswer.toFixed(2)}`
+}
 
-console.log('TOTAL = ' + TOTAL)
+const salaryWithBonus = (lines) => {
+  const [name, fixedSalary, totalSales] = lines.map(Number)
+  const unformatedAnswer = (totalSales * 0.15) + fixedSalary
+  answer = formatAnswer(unformatedAnswer)
+  return answer
+}
+
+console.log(salaryWithBonus(lines))

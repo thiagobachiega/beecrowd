@@ -1,13 +1,17 @@
-const input = ["3.0","4.0","5.2"]
+var input = '3.0\n4.0\n5.2'
+//var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
 
-pi = 3.14159
+const formatAnswer = (unformatedAnswer, prefix) => {
+  return `${prefix}: ${unformatedAnswer.toFixed(3)}`
+}
 
-const A = Number(input[0])
-const B = Number(input[1])
-const C = Number(input[2])
+const objectArea = (lines) => {
+  const [A, B, C] = lines.filter(Boolean).map(Number)
+  pi = 3.14159
+  const calcTriangleArea = ((A * C) / 2)
+  answer = formatAnswer(calcTriangleArea, 'TRIANGULO')
+  return answer
+}
 
-const TRIANGULO = (A * C / 2 ).toFixed(3)
-const CIRCULO = ().toFixed(3)
-
-console.log('TRIANGULO: '+ TRIANGULO)
-console.log('CIRCULO: '+ CIRCULO)
+console.log(objectArea(lines))

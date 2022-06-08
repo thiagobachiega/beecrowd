@@ -6,12 +6,8 @@ const formatAnswer = (unformatedAnswer) => {
 }
 
 const averageGrade = (lines) => {
-  console.log(lines)
-  const numberOne = Number(lines[0])
-  const numberTwo = Number(lines[1])
-  const unformatedAnswer = (numberOne + numberTwo) / lines.length
-  console.log(lines)
-  console.log(lines.length)
+  const [A, B] = lines.map(Number)
+  const unformatedAnswer = ((A * 3.5) + (B * 7.5)) / 11
   answer = formatAnswer(unformatedAnswer)
   return answer
 }

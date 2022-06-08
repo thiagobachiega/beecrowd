@@ -6,11 +6,11 @@ const formatAnswer = (unformatedAnswer) => {
   return `DIFERENCA = ${unformatedAnswer}`
 }
 
-const averageGrade = (lines) => {
+const diference = (lines) => {
   const [A, B, C, D] = lines.map(Number)
   const unformatedAnswer = ((A * B) - (C * D))
   answer = formatAnswer(unformatedAnswer)
   return answer
 }
 
-console.log(averageGrade(lines))
+console.log(diference(lines))

@@ -1,10 +1,18 @@
-const input = ["25","100","5.50"]
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
 
-const NUMBER = input[0]
-const HOURS = input[1]
-const PRICEPERHOUR = input[2]
+const number = Number(lines[0])
 
-const SALARY = (Number(HOURS) * Number(PRICEPERHOUR)).toFixed(2)
+const formatAnswer = (unformatedAnswer, number) => {
+  return `SALARY = U$ ${unformatedAnswer.toFixed(2)}`
+}
 
-console.log('NUMBER = ' + NUMBER)
-console.log('SALARY = U$' + SALARY)
+const salary = (lines) => {
+  const [number, hours, pricePerHour] = lines.map(Number)
+  const unformatedAnswer = hours * pricePerHour
+  answer = formatAnswer(unformatedAnswer, number)
+  return answer
+}
+
+console.log(`NUMBER = ${number}`)
+console.log(salary(lines))

@@ -1,5 +1,15 @@
-const input = ["5.0","6.0","7.0"]
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
 
-const MEDIA = (Number(input[0]) + Number(input[1]) + Number(input[2])) / input.length
+const formatAnswer = (unformatedAnswer) => {
+  return `MEDIA = ${unformatedAnswer.toFixed(1)}`
+}
 
-console.log('MEDIA = ' + MEDIA)
+const averageGrade = (lines) => {
+  const [A, B, C] = lines.map(Number)
+  const unformatedAnswer = ((A * 2) + (B * 3) + (C * 5)) / 10
+  answer = formatAnswer(unformatedAnswer)
+  return answer
+}
+
+console.log(averageGrade(lines))
