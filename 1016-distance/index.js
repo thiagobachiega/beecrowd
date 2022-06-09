@@ -6,11 +6,11 @@ const formatAnswer = (unformatedAnswer, prefix) => {
   return `${unformatedAnswer} ${prefix}`
 }
 
-const distanceBetweenCars = (lines) => {
+const fuelSpent = (lines) => {
   distance = Number(lines.filter(Boolean))
   const distanceBetweenCars = distance * 2 
   answer = formatAnswer(distanceBetweenCars, 'minutos')
   return answer
 }
 
-console.log(distanceBetweenCars(lines))
+console.log(fuelSpent(lines))

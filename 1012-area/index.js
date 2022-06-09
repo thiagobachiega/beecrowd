@@ -1,24 +1,24 @@
-var input = '12.7\n10.4\n15.2'
+var input = '12.7 10.4 15.2\n'
 //var input = require('fs').readFileSync('/dev/stdin', 'utf8');
-var lines = input.split('\n',);
+var lines = input.split('\n');
 
 const formatAnswer = (unformatedAnswer, prefix) => {
   return `${prefix}: ${unformatedAnswer.toFixed(3)}`
 }
 
 const objectArea = (lines) => {
-  const [A, B, C] = lines.filter(Boolean).map(Number)
+  const [A, B, C] = lines[0].split(" ").map(Number)
   pi = 3.14159
   const calcTriangleArea = ((A * C) / 2)
-  answerTriangle = formatAnswer(calcTriangleArea, 'TRIANGULO')
+  const answerTriangle = formatAnswer(calcTriangleArea, 'TRIANGULO')
   const calcCircleArea = pi * (C * C)
-  answerCircle = formatAnswer(calcCircleArea, 'CIRCULO')
+  const answerCircle = formatAnswer(calcCircleArea, 'CIRCULO')
   const calcTrapeziumArea = (( A + B ) / 2) * C
-  answerTrapezium = formatAnswer(calcTrapeziumArea, 'TRAPEZIO')
+  const answerTrapezium = formatAnswer(calcTrapeziumArea, 'TRAPEZIO')
   const calcSquareArea = B * B
-  answerSquare = formatAnswer(calcSquareArea, 'QUADRADO')
+  const answerSquare = formatAnswer(calcSquareArea, 'QUADRADO')
   const calcRetangleArea = A * B
-  answerRetangle = formatAnswer(calcRetangleArea, 'RETANGULO')
+  const answerRetangle = formatAnswer(calcRetangleArea, 'RETANGULO')
   return [answerTriangle, answerCircle, answerTrapezium, answerSquare, answerRetangle]
 }
 

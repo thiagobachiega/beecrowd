@@ -1,6 +1,6 @@
-var input = '217\n14\n6'
+var input = '217 14 6'
 //var input = require('fs').readFileSync('/dev/stdin', 'utf8');
-var lines = input.split('\n');
+var lines = input.split(' ');
 
 const formatAnswer = (unformatedAnswer, prefix) => {
   return `${unformatedAnswer} ${prefix}`
