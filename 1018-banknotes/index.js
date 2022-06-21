@@ -27,7 +27,7 @@ const answer = bankNotes.reduce((acc, currency, index) => {
 const formatAnswer = (answer) => {
     console.log(answer[0].value)
   answer.forEach((notes) => {
-    return console.log(`${notes.amount} nota(s) de ${notes.currency.toFixed(2).replace('.',',')}`)
+    return console.log(`${notes.amount} nota (s) de ${notes.currency.toFixed(2).replace('.',',')}`)
   })
 }
 
